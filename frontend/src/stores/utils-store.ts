@@ -7,6 +7,7 @@ export const useUtilsStore = defineStore('utils', () => {
     const marketingModal = ref(false);
     const leadsModal = ref(false);
     const appsModal = ref(false);
+    const showMenu = ref(false);
 
     const goToContact = () => {
         window.open('https://wa.me/34604822385', '_blank');
@@ -16,6 +17,7 @@ export const useUtilsStore = defineStore('utils', () => {
         marketingModal,
         leadsModal,
         appsModal,
-        goToContact
+        goToContact,
+        showMenu
     };
 });

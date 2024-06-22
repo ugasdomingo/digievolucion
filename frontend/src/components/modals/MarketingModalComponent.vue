@@ -201,4 +201,35 @@ const utilStore = useUtilsStore();
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .modal {
+        .modal-content {
+            padding: 2rem 1rem;
+            width: 90%;
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .benefit-info {
+                flex-direction: column;
+
+                .card {
+                    width: 100%;
+                    margin-bottom: 2rem;
+                }
+            }
+
+            .buttoms {
+                flex-direction: column;
+
+                .btn-contact {
+                    width: 100%;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
 </style>

@@ -1,9 +1,11 @@
 <script setup lang="ts">
 //Import tools
 import { useUserStore } from '../stores/user-store';
+import { useUtilsStore } from '../stores/utils-store';
 
 //Activate store
 const userStore = useUserStore();
+const utilStore = useUtilsStore();
 
 const paths = [
     { name: 'Servicios', path: '/servicios' },
@@ -19,15 +21,19 @@ const logout = () => {
 <template>
     <nav>
         <ul>
-            <li v-for="path in paths" :key="path.name">
+            <li
+                v-for="path in paths"
+                :key="path.name"
+                @click="utilStore.showMenu = false"
+            >
                 <RouterLink :to="path.path">{{ path.name }}</RouterLink>
             </li>
-            <li v-if="userStore.token">
+            <li v-if="userStore.token" @click="utilStore.showMenu = false">
                 <RouterLink to="/" class="last-btn" @click="logout"
                     >Cerrar Sesión</RouterLink
                 >
             </li>
-            <li v-else>
+            <li v-else @click="utilStore.showMenu = false">
                 <RouterLink to="/salud-de-marca" class="last-btn"
                     >Salud de tu Marca</RouterLink
                 >

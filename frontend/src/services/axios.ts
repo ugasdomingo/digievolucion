@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: 'http://localhost:3005/v1/api',
+    baseURL: 'https://digievolucion-api.vercel.app/v1/api',
     withCredentials: true
 });
 

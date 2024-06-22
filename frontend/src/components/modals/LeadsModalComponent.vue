@@ -23,7 +23,10 @@ const utilStore = useUtilsStore();
             <p>¿Qué gana tu negocio con este servicio?</p>
             <div class="benefit-info">
                 <div class="card">
-                    <img src="" alt="image" />
+                    <img
+                        src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="image"
+                    />
                     <h3>Ahorrar tiempo</h3>
                     <p>
                         Estudiamos el mercado y a tu público objetivo por ti.
@@ -32,7 +35,10 @@ const utilStore = useUtilsStore();
                     </p>
                 </div>
                 <div class="card">
-                    <img src="" alt="image" />
+                    <img
+                        src="https://images.pexels.com/photos/186461/pexels-photo-186461.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="image"
+                    />
                     <h3>Ahorrar dinero</h3>
                     <p>
                         Invertimos tu presupuesto solo en publiaciones que ya
@@ -41,7 +47,10 @@ const utilStore = useUtilsStore();
                     </p>
                 </div>
                 <div class="card">
-                    <img src="" alt="image" />
+                    <img
+                        src="https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="image"
+                    />
                     <h3>Muchos Leads</h3>
                     <p>
                         Llenaremos tu base de datos de tantos potenciales
@@ -111,22 +120,23 @@ const utilStore = useUtilsStore();
 
             .card {
                 width: 30%;
-                padding: 1rem;
+                padding: 0 0 2rem;
                 border: 1px solid var(--color-gray);
                 border-radius: 1rem;
                 box-sizing: border-box;
 
                 img {
                     width: 100%;
-                    height: 10rem;
-                    object-fit: cover;
+                    height: 11rem;
                     border-radius: 1rem 1rem 0 0;
-                    margin-bottom: 1rem;
+                    object-fit: cover;
+                    margin-bottom: 0.5rem;
                 }
 
                 h3 {
                     font-family: nunito;
                     margin-bottom: 0.5rem;
+                    padding: 0 0.5rem;
                 }
 
                 p {
@@ -134,6 +144,7 @@ const utilStore = useUtilsStore();
                     letter-spacing: 0.1rem;
                     margin-bottom: 0;
                     font-size: 0.9rem;
+                    padding: 0 0.5rem;
                 }
             }
         }
@@ -176,6 +187,37 @@ const utilStore = useUtilsStore();
             &:hover {
                 background-color: var(--color-accent);
                 border-color: transparent;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .modal {
+        .modal-content {
+            padding: 2rem 1rem;
+            width: 90%;
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .benefit-info {
+                flex-direction: column;
+
+                .card {
+                    width: 100%;
+                    margin-bottom: 2rem;
+                }
+            }
+
+            .buttoms {
+                flex-direction: column;
+
+                .btn-contact {
+                    width: 100%;
+                    margin-bottom: 1rem;
+                }
             }
         }
     }

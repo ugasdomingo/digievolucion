@@ -1,12 +1,12 @@
 <script setup lang="ts">
 //Import tools
 import { RouterLink } from 'vue-router';
-import { ref } from 'vue';
+import { useUtilsStore } from '../stores/utils-store';
 
 //Import components
 import NavbarComponent from './NavbarComponent.vue';
 
-const showMenu = ref(false);
+const utilStore = useUtilsStore();
 </script>
 
 <template>
@@ -23,9 +23,9 @@ const showMenu = ref(false);
             src="../assets/icon-hamburguer-menu.svg"
             alt="menu"
             class="responsive-menu"
-            @click="showMenu = !showMenu"
+            @click="utilStore.showMenu = !utilStore.showMenu"
         />
-        <NavbarComponent v-if="showMenu" />
+        <NavbarComponent v-if="utilStore.showMenu" />
         <NavbarComponent class="navbar" />
     </header>
 </template>

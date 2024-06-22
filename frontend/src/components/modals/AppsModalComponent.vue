@@ -21,7 +21,10 @@ const utilStore = useUtilsStore();
             <p>¿Qué gana tu negocio con este servicio?</p>
             <div class="benefit-info">
                 <div class="card">
-                    <img src="" alt="image" />
+                    <img
+                        src="https://images.pexels.com/photos/221181/pexels-photo-221181.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="image"
+                    />
                     <h3>Autoridad y presencia digital</h3>
                     <p>
                         Cautivamos a tus usuarios y potenciales clientes con una
@@ -30,7 +33,10 @@ const utilStore = useUtilsStore();
                     </p>
                 </div>
                 <div class="card">
-                    <img src="" alt="image" />
+                    <img
+                        src="https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="image"
+                    />
                     <h3>Personal más Eficiente</h3>
                     <p>
                         Creamos herramientas digitales para que tu personal
@@ -38,7 +44,10 @@ const utilStore = useUtilsStore();
                     </p>
                 </div>
                 <div class="card">
-                    <img src="" alt="image" />
+                    <img
+                        src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="image"
+                    />
                     <h3>Más conversión a ventas</h3>
                     <p>
                         Fucionamos Neuroventas, Programación Neurolingüística y
@@ -107,22 +116,23 @@ const utilStore = useUtilsStore();
 
             .card {
                 width: 30%;
-                padding: 1rem;
+                padding: 0 0 2rem;
                 border: 1px solid var(--color-gray);
                 border-radius: 1rem;
                 box-sizing: border-box;
 
                 img {
                     width: 100%;
-                    height: 10rem;
+                    height: 11rem;
+                    border-radius: 1rem 1rem 0 0;
                     object-fit: cover;
-                    border-radius: 1rem;
-                    margin-bottom: 1rem;
+                    margin-bottom: 0.5rem;
                 }
 
                 h3 {
                     font-family: nunito;
                     margin-bottom: 0.5rem;
+                    padding: 0 0.5rem;
                 }
 
                 p {
@@ -130,6 +140,7 @@ const utilStore = useUtilsStore();
                     letter-spacing: 0.1rem;
                     margin-bottom: 0;
                     font-size: 0.9rem;
+                    padding: 0 0.5rem;
                 }
             }
         }
@@ -172,6 +183,37 @@ const utilStore = useUtilsStore();
             &:hover {
                 background-color: var(--color-accent);
                 border-color: transparent;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .modal {
+        .modal-content {
+            padding: 2rem 1rem;
+            width: 90%;
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .benefit-info {
+                flex-direction: column;
+
+                .card {
+                    width: 100%;
+                    margin-bottom: 2rem;
+                }
+            }
+
+            .buttoms {
+                flex-direction: column;
+
+                .btn-contact {
+                    width: 100%;
+                    margin-bottom: 1rem;
+                }
             }
         }
     }
