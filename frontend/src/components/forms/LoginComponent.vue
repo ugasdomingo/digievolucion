@@ -87,4 +87,10 @@ const login = async () => {
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .login-form {
+        width: 100%;
+    }
+}
 </style>

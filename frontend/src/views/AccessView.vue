@@ -23,6 +23,11 @@ const isUser = ref(true);
             <p>¿Ya tienes cuenta?</p>
             <button @click="isUser = true">Iniciar Sesión</button>
         </section>
+        <img
+            src="images/fondo-8.jpg"
+            alt="background-tech"
+            class="background"
+        />
     </main>
 </template>
 
@@ -68,6 +73,27 @@ main {
                 color: var(--color-primary);
             }
         }
+    }
+    .background {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        padding: 4rem 2rem;
+    }
+
+    section {
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
     }
 }
 </style>

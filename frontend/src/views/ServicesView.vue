@@ -31,9 +31,18 @@ const utilStore = useUtilsStore();
             <img src="images/apps.jpg" alt="Profitsite" />
             <h2>Profitsite</h2>
         </section>
-        <MarketingModalComponent v-if="utilStore.marketingModal" class="modal-container" />
-        <LeadsModalComponent v-if="utilStore.leadsModal" class="modal-container" />
-        <AppsModalComponent v-if="utilStore.appsModal" class="modal-container" />
+        <MarketingModalComponent
+            v-if="utilStore.marketingModal"
+            class="modal-container"
+        />
+        <LeadsModalComponent
+            v-if="utilStore.leadsModal"
+            class="modal-container"
+        />
+        <AppsModalComponent
+            v-if="utilStore.appsModal"
+            class="modal-container"
+        />
     </main>
 </template>
 
@@ -98,6 +107,24 @@ main {
     }
     100% {
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        gap: 5rem;
+        height: fit-content;
+        padding: 8rem 2rem 5rem;
+
+        section {
+            width: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 }
 </style>

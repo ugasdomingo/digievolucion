@@ -1,15 +1,32 @@
 <script setup lang="ts">
 //Import tools
 import { RouterLink } from 'vue-router';
+import { ref } from 'vue';
 
 //Import components
 import NavbarComponent from './NavbarComponent.vue';
+
+const showMenu = ref(false);
 </script>
 
 <template>
     <header>
-        <RouterLink to="/" class="logo">Digiempresas</RouterLink>
-        <NavbarComponent />
+        <RouterLink to="/" class="logo">
+            <img
+                src="images/logo-imagen.png"
+                alt="logo-digiempresas"
+                class="logo-img"
+            />
+            igiempresas
+        </RouterLink>
+        <img
+            src="../assets/icon-hamburguer-menu.svg"
+            alt="menu"
+            class="responsive-menu"
+            @click="showMenu = !showMenu"
+        />
+        <NavbarComponent v-if="showMenu" />
+        <NavbarComponent class="navbar" />
     </header>
 </template>
 
@@ -38,9 +55,43 @@ header {
         transition: all 0.2s ease-in-out;
         color: var(--color-white);
         text-decoration: none;
+        display: flex;
+        align-items: center;
 
         &:hover {
             color: var(--color-accent);
+        }
+
+        .logo-img {
+            width: 3rem;
+            height: 3rem;
+            object-fit: cover;
+            margin-right: 0.2rem;
+        }
+    }
+
+    .responsive-menu {
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 0 2rem;
+
+        .responsive-menu {
+            display: block;
+        }
+
+        .navbar {
+            display: none;
+        }
+
+        .logo {
+            font-size: 2rem;
         }
     }
 }

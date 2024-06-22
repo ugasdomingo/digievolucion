@@ -4,14 +4,13 @@ import { ref } from 'vue';
 import { api } from '../services/axios';
 import { useUserStore } from './user-store';
 import { IHealtResult } from '../interfaces/IHealtResult';
-import { IHealt } from '../interfaces/IHealt';
 
 //Define store
 export const useHealtStore = defineStore('healt', () => {
     const userStore = useUserStore();
 
     const allHealtResults = ref<IHealtResult[]>([]);
-    const userHealt = ref<IHealt>({} as IHealt);
+    const userHealt = ref<IHealtResult>({} as IHealtResult);
 
     const createHealt = async (healt: Object) => {
         try {
@@ -34,13 +33,13 @@ export const useHealtStore = defineStore('healt', () => {
         try {
             const response = await api({
                 method: 'get',
-                url: '/health',
+                url: '/healthResult/user',
                 headers: {
                     Authorization: `Bearer ${userStore.token}`
                 }
             });
 
-            userHealt.value = response.data.health;
+            userHealt.value = response.data.healthResult;
         } catch (error) {
             console.log(error);
         }

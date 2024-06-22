@@ -79,6 +79,8 @@ const utilStore = useUtilsStore();
         border: 1px solid var(--color-gray);
         border-radius: 1rem;
         width: 80%;
+        max-height: 80vh;
+        overflow-y: auto;
         box-sizing: border-box;
 
         h1 {

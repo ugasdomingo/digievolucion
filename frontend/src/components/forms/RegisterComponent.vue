@@ -19,7 +19,12 @@ const password = ref('');
 const register = async () => {
     try {
         loading.value = true;
-        await userStore.register(name.value, email.value, password.value, 'user');
+        await userStore.register(
+            name.value,
+            email.value,
+            password.value,
+            'user'
+        );
 
         name.value = '';
         email.value = '';
@@ -86,6 +91,12 @@ const register = async () => {
             background-color: var(--color-white);
             color: var(--color-primary);
         }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .register-form {
+        width: 100%;
     }
 }
 </style>

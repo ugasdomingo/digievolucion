@@ -3,7 +3,7 @@
 import { useUserStore } from '../../stores/user-store';
 import { useHealtStore } from '../../stores/healt-store';
 import { useRouter } from 'vue-router';
-import { ref } from 'vue';
+import { onBeforeMount, ref } from 'vue';
 
 //Import components
 import LoadingComponent from '../LoadingComponent.vue';
@@ -80,18 +80,27 @@ const handleSubmit = async () => {
         loading.value = false;
     }
 };
+
+onBeforeMount(() => {
+    if (userStore.token) {
+        healtStore.getUserHealtByUser();
+    }
+});
 </script>
 
 <template>
-    <form>
-        <section class="user-loggued" v-if="userStore.token">
-            <p>
-                Si ya realizaste completaste este formulario puedes consultar el
-                resultado en su escritorio
-            </p>
-            <RouterLink to="/escritorio">Ir a mi escritorio</RouterLink>
-        </section>
-        <section class="user-register" v-else>
+    <section
+        class="user-loggued"
+        v-if="Object.keys(healtStore.userHealt).length > 0"
+    >
+        <p>
+            Ya realizaste este formulario puedes consultar el resultado en tu
+            escritorio
+        </p>
+        <RouterLink to="/escritorio">Ir a mi escritorio</RouterLink>
+    </section>
+    <form v-else>
+        <section class="user-register" v-if="!userStore.token">
             <input
                 type="text"
                 class="text-input"
@@ -222,6 +231,23 @@ const handleSubmit = async () => {
 </template>
 
 <style scoped lang="scss">
+.user-loggued {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 50%;
+    margin: 2rem 0 5rem;
+    padding: 2rem;
+    background-color: var(--color-secondary);
+    border-radius: 1rem;
+
+    p {
+        text-align: center;
+        margin: 0;
+    }
+}
 form {
     display: flex;
     flex-direction: column;
@@ -251,23 +277,6 @@ form {
         font-size: 1.25rem;
     }
 
-    .user-loggued {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-        width: 50%;
-        margin: 2rem 0 5rem;
-        padding: 2rem;
-        background-color: var(--color-secondary);
-        border-radius: 1rem;
-
-        p {
-            text-align: center;
-            margin: 0;
-        }
-    }
     .user-register {
         display: flex;
         flex-direction: column;
@@ -366,6 +375,45 @@ form {
             a {
                 color: var(--color-white);
             }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    form {
+        h2 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        .checkbox {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .text-input {
+            font-size: 1rem;
+            height: 2rem;
+        }
+
+        .text-input::placeholder {
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .user-register {
+            width: 100%;
+        }
+
+        .social-media,
+        .marketing,
+        .customers,
+        .web,
+        .politiques {
+            width: 100%;
         }
     }
 }

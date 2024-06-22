@@ -22,7 +22,10 @@ const utilStore = useUtilsStore();
             <p>¿Qué gana tu negocio con este servicio?</p>
             <div class="benefit-info">
                 <div class="card">
-                    <img src="" alt="image" />
+                    <img
+                        src="https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="image"
+                    />
                     <h3>Mejorar los ingresos</h3>
                     <p>
                         A través de mejorar la experiencia de usuario,
@@ -32,7 +35,10 @@ const utilStore = useUtilsStore();
                     </p>
                 </div>
                 <div class="card">
-                    <img src="" alt="image" />
+                    <img
+                        src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="image"
+                    />
                     <h3>Personal más productivo</h3>
                     <p>
                         A la par de mejorar la experiencia de usuario, nos
@@ -42,7 +48,10 @@ const utilStore = useUtilsStore();
                     </p>
                 </div>
                 <div class="card">
-                    <img src="" alt="image" />
+                    <img
+                        src="https://images.pexels.com/photos/7681097/pexels-photo-7681097.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="image"
+                    />
                     <h3>Menos gasto en nómina</h3>
                     <p>
                         Olvida los costos de captación, contratación y rotación
@@ -81,7 +90,6 @@ const utilStore = useUtilsStore();
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgba(0, 0, 0, 0.7);
 
     .modal-content {
@@ -89,8 +97,10 @@ const utilStore = useUtilsStore();
         margin: 6rem auto;
         padding: 2rem 4rem;
         border: 1px solid var(--color-gray);
-        border-radius: 1rem;
+        border-radius: 1rem 0 0 1rem;
         width: 80%;
+        max-height: 80vh;
+        overflow-y: auto;
         box-sizing: border-box;
 
         h1 {
@@ -121,25 +131,30 @@ const utilStore = useUtilsStore();
 
             .card {
                 width: 30%;
-                padding: 2rem;
+                padding: 0 0 2rem;
                 border: 1px solid var(--color-gray);
                 border-radius: 1rem;
                 box-sizing: border-box;
 
                 img {
                     width: 100%;
+                    height: 11rem;
+                    border-radius: 1rem 1rem 0 0;
+                    object-fit: cover;
                     margin-bottom: 0.5rem;
                 }
 
                 h3 {
                     font-family: nunito;
-                    margin-bottom: 0;
+                    margin: 0;
+                    padding: 0 0.5rem;
                 }
 
                 p {
                     font-weight: 100;
                     letter-spacing: 0.1rem;
                     font-size: 0.9rem;
+                    padding: 0 0.5rem;
                 }
             }
         }

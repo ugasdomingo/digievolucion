@@ -23,4 +23,15 @@ main {
     min-height: 100vh;
     padding: 5rem 4rem 3rem;
 }
+
+@media screen and (max-width: 768px) {
+    main {
+        padding: 5rem 2rem 3rem;
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0;
+        }
+    }
+}
 </style>

@@ -4,6 +4,10 @@ import { UserModel, IUser } from '../models/UserModel';
 import { generateRefreshToken, generateToken } from '../utils/tokenManager';
 import jwt from 'jsonwebtoken';
 
+interface JwtPayload {
+    uid: string;
+}
+
 // Register --> Line 16
 // Login --> Line 61
 // Refresh --> Line 91
@@ -101,27 +105,19 @@ export const refresh = async (req: Request, res: Response) => {
         }
 
         // Check if token is valid
-        jwt.verify(
+        const { uid } = jwt.verify(
             refreshTokenCookie,
-            process.env.JWT_REFRESH as string,
-            (err: any, uid: any) => {
-                if (err) {
-                    return res.status(400).json({ message: 'Invalid token' });
-                }
+            process.env.JWT_REFRESH as string
+        ) as JwtPayload;
+        const user = await UserModel.findById(uid);
 
-                //Generate Token & RefreshToken
-                const newRefreshToken = generateRefreshToken(uid);
-                const response = {
-                    ...generateToken(uid),
-                    refreshToken: newRefreshToken,
-                };
-
-                return res.status(200).json({
-                    message: 'Token refreshed successfully',
-                    response,
-                });
-            }
-        );
+        const refreshToken = generateRefreshToken(uid);
+        return res.json({
+            ...generateToken(uid),
+            refreshToken: refreshToken,
+            role: user?.role,
+            name: user?.name,
+        });
     } catch (error) {
         console.log(error);
         return res.status(500).json({ message: 'Something went wrong' });

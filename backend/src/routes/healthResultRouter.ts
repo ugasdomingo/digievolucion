@@ -16,7 +16,7 @@ const healthResultRouter = Router();
 //Routes
 healthResultRouter.get('/', adminAuth, getAllHealthResults);
 
-healthResultRouter.get('/:uid', adminAuth, getOneHealthResultByAdmin);
+healthResultRouter.get('/admin/:uid', adminAuth, getOneHealthResultByAdmin);
 
 healthResultRouter.get('/user', userAuth, getOneHealthResultByUser);
 

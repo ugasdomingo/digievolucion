@@ -13,10 +13,12 @@ import { RouterLink } from 'vue-router';
         <p>Más que Marketing, hacemos tu empresa más rentable.</p>
 
         <div>
-            <RouterLink to="/servicios">Ver Servicios</RouterLink>
-            <RouterLink to="/salud-de-marca" class="trans-buttom">
+            <RouterLink to="/salud-de-marca">
                 Quiero ganar clientes online
             </RouterLink>
+            <RouterLink to="/servicios" class="trans-buttom"
+                >Ver Servicios</RouterLink
+            >
         </div>
     </main>
 </template>
@@ -129,5 +131,27 @@ main {
         transform: translateX(0);
     }
 }
+
+@media screen and (max-width: 768px) {
+    main {
+        padding: 0 2rem;
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+        }
+
+        div {
+            flex-direction: column;
+            gap: 1rem;
+
+            a {
+                padding: 0.5rem 1rem;
+            }
+        }
+    }
+}
 </style>
-```

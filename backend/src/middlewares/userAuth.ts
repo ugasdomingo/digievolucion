@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
 
 //Interface for JWT handdle
+
 interface JwtPayload {
     uid: string;
 }
@@ -16,11 +17,7 @@ declare global {
 }
 
 // Create User Auth Middleware
-export const userAuth = async (
-    req: Request,
-    res: Response,
-    next: NextFunction
-) => {
+export const userAuth = async (req: any, res: Response, next: NextFunction) => {
     try {
         let token = req.headers.authorization;
 
@@ -31,12 +28,11 @@ export const userAuth = async (
         }
 
         token = token.split(' ')[1];
+
         const { uid } = jwt.verify(
             token,
             process.env.JWT_SECRET as string
         ) as JwtPayload;
-
-        // Set uid in request
         req.uid = uid;
 
         next();

@@ -30,7 +30,12 @@ export const useUserStore = defineStore('user', () => {
         }
     };
 
-    const register = async (name: string, email: string, password: string, role: string) => {
+    const register = async (
+        name: string,
+        email: string,
+        password: string,
+        role: string
+    ) => {
         try {
             const res = await api.post('/register', {
                 name,
@@ -62,12 +67,12 @@ export const useUserStore = defineStore('user', () => {
                 }
             });
 
-            token.value = res.data.response.token;
-            userRole.value = res.data.response.role;
-            userName.value = res.data.response.name;
+            token.value = res.data.token;
+            userRole.value = res.data.role;
+            userName.value = res.data.name;
 
-            localStorage.setItem('user', res.data.response.role);
-            localStorage.setItem('token', res.data.response.refreshToken);
+            localStorage.setItem('user', res.data.role);
+            localStorage.setItem('token', res.data.refreshToken);
 
             setTime();
         } catch (error) {

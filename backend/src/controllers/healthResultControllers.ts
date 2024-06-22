@@ -57,12 +57,11 @@ export const getOneHealthResultByAdmin = async (
 };
 
 // Get Health Result by User
-export const getOneHealthResultByUser = async (req: Request, res: Response) => {
+export const getOneHealthResultByUser = async (req: any, res: Response) => {
     try {
         const uid = req.uid;
-        const healthResult: IHealthResult | null =
-            await HealthResultModel.findOne({ uid });
-
+        console.log(uid);
+        const healthResult = await HealthResultModel.findOne({ uid });
         if (!healthResult) {
             return res.status(404).json({ message: 'Health Result not found' });
         }

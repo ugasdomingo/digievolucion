@@ -23,10 +23,14 @@ const logout = () => {
                 <RouterLink :to="path.path">{{ path.name }}</RouterLink>
             </li>
             <li v-if="userStore.token">
-                <RouterLink to="/" class="last-btn" @click="logout">Cerrar Sesión</RouterLink>
+                <RouterLink to="/" class="last-btn" @click="logout"
+                    >Cerrar Sesión</RouterLink
+                >
             </li>
             <li v-else>
-                <RouterLink to="/salud-de-marca" class="last-btn">Salud de tu Marca</RouterLink>
+                <RouterLink to="/salud-de-marca" class="last-btn"
+                    >Salud de tu Marca</RouterLink
+                >
             </li>
         </ul>
     </nav>
@@ -74,6 +78,36 @@ nav {
     &:hover {
         background-color: var(--color-tertiary);
         color: var(--color-white);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        position: fixed;
+        top: 5rem;
+        right: 0;
+        width: fit-content;
+        height: fit-content;
+        padding: 2rem 1rem;
+        margin: 0;
+        border-radius: 1rem 0 0 1rem;
+        background-color: var(--color-primary);
+        gap: 2.5rem;
+        flex-direction: column;
+        z-index: 1000;
+
+        ul {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        li {
+            font-size: 2rem;
+        }
+    }
+
+    .last-btn {
+        margin-top: 5rem;
     }
 }
 </style>
