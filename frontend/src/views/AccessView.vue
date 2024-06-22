@@ -24,7 +24,7 @@ const isUser = ref(true);
             <button @click="isUser = true">Iniciar Sesión</button>
         </section>
         <img
-            src="images/fondo-8.jpg"
+            src="/images/fondo-8.jpg"
             alt="background-tech"
             class="background"
         />

@@ -18,17 +18,17 @@ const utilStore = useUtilsStore();
             alt="background home"
         />
         <section @click="utilStore.marketingModal = true">
-            <img src="images/marketing-360.jpg" alt="Marketing 360" />
+            <img src="/images/marketing-360.jpg" alt="Marketing 360" />
             <h2>Marketing 360</h2>
         </section>
 
         <section @click="utilStore.leadsModal = true">
-            <img src="images/leads.jpg" alt="Quiero Leads" />
+            <img src="/images/leads.jpg" alt="Quiero Leads" />
             <h2>Quiero Leads</h2>
         </section>
 
         <section @click="utilStore.appsModal = true">
-            <img src="images/apps.jpg" alt="Profitsite" />
+            <img src="/images/apps.jpg" alt="Profitsite" />
             <h2>Profitsite</h2>
         </section>
         <MarketingModalComponent

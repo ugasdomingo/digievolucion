@@ -78,6 +78,7 @@ router.beforeEach(async (to, from, next) => {
             }
             return next('acceder');
         } catch (error) {
+            console.log(from);
             return next({ name: 'Inicio' });
         }
     }

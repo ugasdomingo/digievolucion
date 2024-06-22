@@ -1,16 +1,12 @@
-<script setup lang="ts">
-import { useUtilsStore } from '../stores/utils-store';
-
-const utilsStore = useUtilsStore();
-</script>
+<script setup lang="ts"></script>
 
 <template>
     <footer>
         <p>Todos los derechos reservados</p>
 
-        <a href="#header" v-if="utilsStore.scroll > 1000">
+        <!-- <a href="#header" v-if="utilsStore.scroll > 1000">
             <img src="" alt="arriba" />
-        </a>
+        </a> -->
     </footer>
 </template>
 

@@ -61,7 +61,7 @@ onBeforeUpdate(() => {
             <p class="text-action">{{ conclutionsAction }}</p>
         </aside>
         <img
-            src="images/fondo-8.jpg"
+            src="/images/fondo-8.jpg"
             alt="background-tech"
             class="background"
         />

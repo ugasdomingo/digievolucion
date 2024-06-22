@@ -1,6 +1,5 @@
 //Import tools
 import { Request, Response } from 'express';
-import { IRequest } from '../helpers/IRequest';
 import { QuoteModel, IQuote } from '../models/QuoteModel';
 
 // Get All Quotes --> Line 16

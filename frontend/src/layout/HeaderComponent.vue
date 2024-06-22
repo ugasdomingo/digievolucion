@@ -13,7 +13,7 @@ const showMenu = ref(false);
     <header>
         <RouterLink to="/" class="logo">
             <img
-                src="images/logo-imagen.png"
+                src="/images/logo-imagen.png"
                 alt="logo-digiempresas"
                 class="logo-img"
             />

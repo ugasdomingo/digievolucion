@@ -2,7 +2,7 @@
 
 <template>
     <main>
-        <img src="images/fondo-1.jpg" alt="background" class="background" />
+        <img src="/images/fondo-1.jpg" alt="background" class="background" />
         <section class="question">
             <h1>¿Qué es Digiempresas?</h1>
             <p>
