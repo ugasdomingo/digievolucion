@@ -11,52 +11,42 @@ const healthSchema = new Schema(
         },
         carousel: {
             type: Boolean,
-            required: true,
         },
         shortVideos: {
             type: Boolean,
-            required: true,
         },
         longVideos: {
             type: Boolean,
-            required: true,
         },
         automation: {
             type: Boolean,
-            required: true,
         },
         adsBudget: {
             type: Boolean,
-            required: true,
         },
         kpis: {
             type: Boolean,
-            required: true,
         },
         realCustomersCanal: {
             type: String,
         },
         realCustomersPercentage: {
             type: Number,
-            required: true,
         },
         realCustomerStrategy: {
             type: String,
         },
         marketingDepartment: {
             type: Boolean,
-            required: true,
         },
         marketingObjectives: {
             type: String,
         },
         webUX: {
             type: Boolean,
-            required: true,
         },
         webTeam: {
             type: Boolean,
-            required: true,
         },
         message: {
             type: String,

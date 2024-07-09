@@ -35,6 +35,7 @@ const marketingObjectives = ref('');
 // Web or App
 const webUX = ref(false);
 const webTeam = ref(false);
+const message = ref('');
 
 //Define functions
 const handleSubmit = async () => {
@@ -56,6 +57,7 @@ const handleSubmit = async () => {
                 marketingObjectives: marketingObjectives.value,
                 webUX: webUX.value,
                 webTeam: webTeam.value,
+                message: message.value,
                 politiquesAccepted: politiquesAccepted.value
             };
             await healtStore.createHealt(data);
@@ -209,6 +211,14 @@ onBeforeMount(() => {
                 <p>¿La web facilita el trabajo de tus empleados?</p>
                 <input class="checkbox" type="checkbox" v-model="webTeam" />
             </div>
+        </section>
+
+        <section class="message">
+            <textarea
+                class="text-input"
+                v-model="message"
+                placeholder="Escribe aquí tu comentario (opcional)"
+            ></textarea>
         </section>
 
         <div class="politiques">
