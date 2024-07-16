@@ -21,7 +21,7 @@ const showStock = (stock: number) => {
 
 //Lifecycle hooks
 onBeforeMount(() => {
-    coursesStore.getCourseById(route.params.id);
+    coursesStore.getCourseById(route.params.id as string);
     console.log(coursesStore.allCourses);
 });
 </script>

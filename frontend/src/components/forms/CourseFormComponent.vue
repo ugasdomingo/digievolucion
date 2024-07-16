@@ -1,9 +1,7 @@
 <script setup lang="ts">
 //Import tools
 import { useCourseStore } from '../../stores/course-store';
-import { useRouter } from 'vue-router';
-import { onBeforeMount, ref } from 'vue';
-import { CKEditor } from '@ckeditor/ckeditor5-vue';
+import { ref } from 'vue';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 //Import components
@@ -11,7 +9,6 @@ import LoadingComponent from '../LoadingComponent.vue';
 
 //Use tools
 const courseStore = useCourseStore();
-const router = useRouter();
 const loading = ref(false);
 const editor = ClassicEditor;
 
