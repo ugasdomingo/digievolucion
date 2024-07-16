@@ -21,10 +21,6 @@ const courseSchema = new Schema(
             type: Number,
             required: true,
         },
-        imageId: {
-            type: String,
-            required: true,
-        },
         imageUrl: {
             type: String,
             required: true,
@@ -54,7 +50,6 @@ export interface ICourse extends Document {
     description: string;
     brief: string;
     price: number;
-    imageId: string;
     imageUrl: string;
     category: string;
     stock: number;

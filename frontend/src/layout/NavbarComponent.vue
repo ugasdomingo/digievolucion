@@ -9,7 +9,7 @@ const utilStore = useUtilsStore();
 
 const paths = [
     { name: 'Servicios', path: '/servicios' },
-    { name: 'Conocenos', path: '/conocenos' },
+    { name: 'Cursos', path: '/cursos' },
     { name: 'Escritorio', path: '/escritorio' }
 ];
 

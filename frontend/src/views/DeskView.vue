@@ -6,6 +6,7 @@ import { useUserStore } from '../stores/user-store';
 import { conclutions } from '../static/resultsConclutions';
 //Import components
 import GaugeComponent from '../common/GaugeComponet.vue';
+import CourseFormComponent from '../components/forms/CourseFormComponent.vue';
 
 const healtStore = useHealtStore();
 const userStore = useUserStore();
@@ -13,6 +14,7 @@ const finalResult = ref('red');
 const conclutionsIntro = ref('');
 const conclutionsDescription = ref('');
 const conclutionsAction = ref('');
+const showAdminDesk = ref(false);
 
 const setFinalResult = (value: number) => {
     value < 60
@@ -30,8 +32,14 @@ const setFinalResult = (value: number) => {
 };
 
 onBeforeMount(() => {
-    healtStore.getUserHealtByUser();
-    setFinalResult(parseInt(healtStore.userHealt.automaticResult));
+    const role = localStorage.getItem('user');
+
+    if (role === 'Admin') {
+        showAdminDesk.value = true;
+    } else {
+        healtStore.getUserHealtByUser();
+        setFinalResult(parseInt(healtStore.userHealt.automaticResult));
+    }
 });
 
 onBeforeUpdate(() => {
@@ -40,7 +48,10 @@ onBeforeUpdate(() => {
 </script>
 
 <template>
-    <main class="desk-page">
+    <section class="desk-admin" v-if="showAdminDesk">
+        <CourseFormComponent />
+    </section>
+    <main class="desk-page" v-else>
         <section class="left-content">
             <h2>Bienvenido {{ userStore.userName }}</h2>
             <h4>Recomendaciones:</h4>

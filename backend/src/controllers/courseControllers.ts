@@ -44,7 +44,6 @@ export const createCourse = async (req: Request, res: Response) => {
             description,
             brief,
             price,
-            imageId,
             imageUrl,
             category,
             stock,
@@ -57,7 +56,6 @@ export const createCourse = async (req: Request, res: Response) => {
             description,
             brief,
             price,
-            imageId,
             imageUrl,
             category,
             stock,
@@ -104,9 +102,6 @@ export const deleteCourse = async (req: Request, res: Response) => {
         if (!course) {
             return res.status(404).json({ message: 'Course not found' });
         }
-
-        // Delete image from cloudinary
-        await deleteImage(course.imageId);
 
         return res.status(200).json({ message: 'Course deleted' });
     } catch (error) {

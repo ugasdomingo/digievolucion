@@ -48,7 +48,7 @@ header {
     z-index: 1000;
 
     .logo {
-        font-family: 'Neoteric';
+        font-family: 'neoteric';
         font-size: 3rem;
         font-weight: 700;
         cursor: pointer;

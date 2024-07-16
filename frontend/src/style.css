@@ -2,7 +2,7 @@
   --color-primary: #1d227b;
   --color-secondary: #1297c1;
   --color-background: #0204186c;
-  --color-accent: #fa8c24;
+  --color-accent: #FC6F1F;
   --color-white: #f5f5f5;
   --color-black: #202020;
   --color-warning: #fc4c1c;
@@ -10,15 +10,15 @@
 }
 
 @font-face {
-  font-family: 'Neoteric';
-  src: url('public/fonts/NEOTERIC.ttf') format('opentype');
+  font-family: 'neoteric';
+  src: url('/public/fonts/NEOTERIC.ttf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Nunito';
-  src: url('public/fonts/Nunito-Regular.ttf') format('opentype');
-  font-weight: 400;
+  font-family: 'nunito';
+  src: url('/public/fonts/Nunito-Regular.ttf') format('opentype');
+  font-weight: 300;
   font-style: nomral;
 }
 
@@ -28,7 +28,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   box-sizing: border-box;
-  font-family: 'Nunito';
+  font-family: 'nunito';
   padding: 0;
   margin: 0;
   background-color: var(--color-primary);
@@ -98,6 +98,18 @@ button:focus-visible {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.ck-editor__editable {
+  background-color: var(--color-white);
+  color: var(--color-black); 
+  min-height: 40vh;
+  min-width: 80%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+
 
 @media (prefers-color-scheme: light) {
   :root {

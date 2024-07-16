@@ -28,6 +28,11 @@ const routes = [
         component: () => import('../views/CoursesView.vue')
     },
     {
+        path: '/cursos/:id',
+        name: 'OneCourses',
+        component: () => import('../views/OneCoursesView.vue')
+    },
+    {
         path: '/salud-de-marca',
         name: 'Health',
         component: () => import('../views/HealthView.vue')
@@ -76,7 +81,7 @@ router.beforeEach(async (to, from, next) => {
             if (userStore.token) {
                 return next();
             }
-            return next('acceder');
+            return next('/acceder');
         } catch (error) {
             console.log(from);
             return next({ name: 'Inicio' });

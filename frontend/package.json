@@ -9,7 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^42.0.1",
+    "@ckeditor/ckeditor5-font": "^42.0.1",
+    "@ckeditor/ckeditor5-highlight": "^42.0.1",
+    "@ckeditor/ckeditor5-vue": "^6.0.0",
     "axios": "^1.5.1",
+    "ckeditor5": "^42.0.1",
     "pinia": "^2.1.6",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
