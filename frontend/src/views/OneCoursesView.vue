@@ -22,7 +22,6 @@ const showStock = (stock: number) => {
 //Lifecycle hooks
 onBeforeMount(() => {
     coursesStore.getCourseById(route.params.id as string);
-    console.log(coursesStore.allCourses);
 });
 </script>
 
@@ -87,9 +86,11 @@ main {
         position: fixed;
         right: 4rem;
         top: 6rem;
+        box-sizing: border-box;
 
         img {
             width: 70%;
+            min-width: 250px;
             height: fit-content;
             object-fit: cover;
             border-radius: 1rem;
@@ -119,6 +120,41 @@ main {
             text-decoration: none;
             font-size: 1.75rem;
             border-radius: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column-reverse;
+        gap: 2rem;
+        padding: 4rem 2rem 2rem;
+
+        .left-content {
+            width: 100%;
+
+            h2 {
+                font-size: 2.5rem;
+                text-align: center;
+                margin: 0;
+            }
+
+            p {
+                font-size: 1.25rem;
+                text-align: justify;
+                margin: 0;
+            }
+        }
+
+        .right-content {
+            width: 100%;
+            position: initial;
+            margin: 0;
+            padding: 2rem 0 0;
+
+            a {
+                align-self: center;
+            }
         }
     }
 }

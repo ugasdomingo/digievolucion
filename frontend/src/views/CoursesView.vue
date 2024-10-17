@@ -53,10 +53,13 @@ main {
 
     a {
         width: 30%;
+        min-width: 250px;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
 }
 
@@ -67,5 +70,17 @@ main {
     object-fit: cover;
     object-position: center;
     z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        padding-top: 6rem;
+        flex-direction: column;
+        gap: 1rem;
+
+        a {
+            min-width: 180px;
+        }
+    }
 }
 </style>
