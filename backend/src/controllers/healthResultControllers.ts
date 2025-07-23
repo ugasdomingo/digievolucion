@@ -1,8 +1,6 @@
 //Import tools
 import { Request, Response } from 'express';
-import { calculateHealth } from '../helpers/calculateHealth';
 import { HealthResultModel, IHealthResult } from '../models/HealthResultModel';
-import { IHealth } from '../models/HealthAnswersModel';
 
 // Get All Health Results --> Line 16
 // Get One Health Result by Admin --> Line 32
@@ -60,7 +58,6 @@ export const getOneHealthResultByAdmin = async (
 export const getOneHealthResultByUser = async (req: any, res: Response) => {
     try {
         const uid = req.uid;
-        console.log(uid);
         const healthResult = await HealthResultModel.findOne({ uid });
         if (!healthResult) {
             return res.status(404).json({ message: 'Health Result not found' });
@@ -76,13 +73,15 @@ export const getOneHealthResultByUser = async (req: any, res: Response) => {
 };
 
 // Create Health Result
-export const createHealthResult = async (health: IHealth) => {
+export const createHealthResult = async (req: any, res: Response) => {
     try {
-        const automaticResult = calculateHealth(health);
+        const uid = req.uid;
+        const { testResult, testAnswers } = req.body;
 
-        const healthResult: IHealthResult = new HealthResultModel({
-            uid: health.uid,
-            automaticResult,
+        const healthResult = new HealthResultModel({
+            uid,
+            testResult,
+            testAnswers,
         });
 
         await healthResult.save();

@@ -10,13 +10,13 @@
 }
 
 @font-face {
-  font-family: 'neoteric';
-  src: url('/public/fonts/NEOTERIC.ttf') format('opentype');
+  font-family: 'titles';
+  src: url('/public/fonts/Poppins-Regular.ttf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'nunito';
+  font-family: 'general';
   src: url('/public/fonts/Nunito-Regular.ttf') format('opentype');
   font-weight: 300;
   font-style: nomral;

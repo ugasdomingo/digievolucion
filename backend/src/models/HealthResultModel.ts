@@ -9,14 +9,13 @@ const healthResultSchema = new Schema(
             ref: 'User',
             required: true,
         },
-        automaticResult: {
-            type: String,
+       testResult: {
+            type: Number,
             required: true,
         },
-        expertResult: {
-            type: String,
-            default:
-                'En breve un experto revisará tu resultado y te dará un plan de acción personalizado.',
+        testAnswers: {
+            type: Object,
+            required: true,
         },
     },
     {
@@ -27,8 +26,8 @@ const healthResultSchema = new Schema(
 //Interface for Health Result
 export interface IHealthResult extends Document {
     uid: string;
-    automaticResult: string;
-    expertResult: string;
+    testResult: number;
+    testAnswers: object;
     createdAt: Date;
     updatedAt: Date;
 }
